@@ -26,7 +26,7 @@ public class Staff
     public DateTime LastUpdate { get; set; }
     [Column("picture_url"), MaxLength(80)]
     public string? PictureUrl { get; set; }
-    [Required, Column("addres_id")]
+    [Required, Column("address_id")]
     public int AddressId { get; set; }
     [Required, Column("store_id")]
     public int StoreId { get; set; }
@@ -42,4 +42,6 @@ public class Staff
     // Relation
     [JsonIgnore]
     public ICollection<Payment>? Payments { get; set; }
+    [JsonIgnore]
+    public Account? Account { get; set; }
 }

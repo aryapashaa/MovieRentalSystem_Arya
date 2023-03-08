@@ -8,12 +8,14 @@ namespace MovieRentalSystem_Arya.Models;
 [Table("tb_ary_m_accounts")]
 public class Account
 {
-    [Key, Column("id")]
-    public int Id { get; set; }
+    [Key, Column("staff_id")]
+    public int StaffId { get; set; }
     [Required, Column("password"), MaxLength(255)]
     public string Password { get; set; }
 
     // Cardinality
     [JsonIgnore]
     public ICollection<AccountRole>? AccountRoles { get; set; }
+    [JsonIgnore]
+    public Staff? Staff { get; set; }
 }

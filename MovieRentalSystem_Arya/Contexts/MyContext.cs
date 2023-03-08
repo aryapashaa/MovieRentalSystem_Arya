@@ -45,24 +45,29 @@ public class MyContext : DbContext
         //        Name = "User"
         //    });
 
-        //// Membuat atribute menjadi unique
-        //modelBuilder.Entity<Employee>().HasIndex(e => new
-        //{
-        //    e.Email,
-        //    e.PhoneNumber
-        //}).IsUnique();
+        // Membuat atribute menjadi unique
+        modelBuilder.Entity<Staff>().HasIndex(s => new
+        {
+            s.Email
+        }).IsUnique();
 
-        //// Relasi one Employee ke one Account 
-        //modelBuilder.Entity<Employee>()
-        //    .HasOne(e => e.Account)
-        //    .WithOne(a => a.Employee)
-        //    .HasForeignKey<Account>(fk => fk.EmployeeNIK);
+        modelBuilder.Entity<Customer>().HasIndex(c => new
+        {
+            c.Email
+        }).IsUnique();
 
-        //// Relasi ke many employee ke one manager
-        //modelBuilder.Entity<Employee>()
-        //    .HasOne(e => e.Manager)
-        //    .WithMany(e => e.Employees)
-        //    .HasForeignKey(fk => fk.ManagerId)
-        //    .OnDelete(DeleteBehavior.NoAction);
+        // Relasi one Employee ke one Account 
+        modelBuilder.Entity<Staff>()
+            .HasOne(s => s.Account)
+            .WithOne(a => a.Staff)
+            .HasForeignKey<Account>(fk => fk.StaffId);
+
+    //// Relasi ke many employee ke one manager
+    //modelBuilder.Entity<Employee>()
+    //    .HasOne(e => e.Manager)
+    //    .WithMany(e => e.Employees)
+    //    .HasForeignKey(fk => fk.ManagerId)
+    //    .OnDelete(DeleteBehavior.NoAction);
+
     }
 }

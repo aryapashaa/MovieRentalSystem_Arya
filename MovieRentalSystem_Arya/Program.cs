@@ -30,8 +30,6 @@ var connectionString = builder.Configuration.GetConnectionString("Connection");
 builder.Services.AddDbContext<MyContext>(options => options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<AccountRepository>();
-builder.Services.AddScoped<AccountRoleRepository>();
-builder.Services.AddScoped<RoleRepository>();
 
 // Configure JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
