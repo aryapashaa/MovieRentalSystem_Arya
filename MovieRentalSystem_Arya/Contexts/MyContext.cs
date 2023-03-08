@@ -33,17 +33,17 @@ public class MyContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        //modelBuilder.Entity<Role>().HasData(
-        //    new Role
-        //    {
-        //        Id = 1,
-        //        Name = "Admin"
-        //    },
-        //    new Role
-        //    {
-        //        Id = 2,
-        //        Name = "User"
-        //    });
+        modelBuilder.Entity<Role>().HasData(
+            new Role
+            {
+                Id = 1,
+                Name = "Admin"
+            },
+            new Role
+            {
+                Id = 2,
+                Name = "Staff"
+            });
 
         // Membuat atribute menjadi unique
         modelBuilder.Entity<Staff>().HasIndex(s => new

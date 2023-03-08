@@ -6,7 +6,6 @@ namespace MovieRentalSystem_Arya.ViewModels;
 
 public class RegisterVM
 {
-    public int Id { get; set; }
     public int? PaymentId { get; set; }
     public string FirstName { get; set; }
     public string? LastName { get; set; }
@@ -20,6 +19,12 @@ public class RegisterVM
     public string ConfirmPassword { get; set; }
     public DateTime LastUpdate { get; set; }
     public string? PictureUrl { get; set; }
-    public int AddressId { get; set; }
-    public int StoreId { get; set; }
+    public string Address1 { get; set; }
+    public string? Address2 { get; set; }
+    public int District { get; set; }
+    public string PostalCode { get; set; }
+    [Phone]
+    public string Phone { get; set; }
+    public string CityName { get; set; }
+    public string CountryName { get; set; }
 }
