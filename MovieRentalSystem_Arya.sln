@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRentalSystem_Arya", "MovieRentalSystem_Arya\MovieRentalSystem_Arya.csproj", "{66FFEC5A-29BB-4810-947B-9D0D0CF257EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRentalSystem_Arya", "MovieRentalSystem_Arya\MovieRentalSystem_Arya.csproj", "{66FFEC5A-29BB-4810-947B-9D0D0CF257EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{1F6794BF-40F3-414A-91D4-23A1FCCD7462}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{66FFEC5A-29BB-4810-947B-9D0D0CF257EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66FFEC5A-29BB-4810-947B-9D0D0CF257EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66FFEC5A-29BB-4810-947B-9D0D0CF257EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F6794BF-40F3-414A-91D4-23A1FCCD7462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6794BF-40F3-414A-91D4-23A1FCCD7462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6794BF-40F3-414A-91D4-23A1FCCD7462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6794BF-40F3-414A-91D4-23A1FCCD7462}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
