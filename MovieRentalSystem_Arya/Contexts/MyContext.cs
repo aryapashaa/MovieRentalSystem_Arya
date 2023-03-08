@@ -56,18 +56,36 @@ public class MyContext : DbContext
             c.Email
         }).IsUnique();
 
-        // Relasi one Employee ke one Account 
+        // Relasi one Staff ke one Account 
         modelBuilder.Entity<Staff>()
             .HasOne(s => s.Account)
             .WithOne(a => a.Staff)
-            .HasForeignKey<Account>(fk => fk.StaffId);
+            .HasForeignKey<Account>(fk => fk.StaffId)
+            .OnDelete(DeleteBehavior.NoAction);
 
-    //// Relasi ke many employee ke one manager
-    //modelBuilder.Entity<Employee>()
-    //    .HasOne(e => e.Manager)
-    //    .WithMany(e => e.Employees)
-    //    .HasForeignKey(fk => fk.ManagerId)
-    //    .OnDelete(DeleteBehavior.NoAction);
+        modelBuilder.Entity<Staff>()
+            .HasOne(s => s.Store)
+            .WithMany(t => t.Staffs)
+            .HasForeignKey(fk => fk.StoreId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        modelBuilder.Entity<Rental>()
+            .HasOne(r => r.Staff)
+            .WithMany(s => s.Rentals)
+            .HasForeignKey(fk => fk.StaffId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        modelBuilder.Entity<Payment>()
+            .HasOne(p => p.Staff)
+            .WithMany(s => s.Payments)
+            .HasForeignKey(fk => fk.StaffId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        modelBuilder.Entity<Payment>()
+            .HasOne(p => p.Rental)
+            .WithMany(s => s.Payments)
+            .HasForeignKey(fk => fk.RentalId)
+            .OnDelete(DeleteBehavior.NoAction);
 
     }
 }

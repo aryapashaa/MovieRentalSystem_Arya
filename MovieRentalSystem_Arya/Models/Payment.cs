@@ -21,13 +21,15 @@ public class Payment
     public int StaffId { get; set; }
 
     // Cardinality
-    [JsonIgnore]
-    [ForeignKey(nameof(RentalId))]
-    public Rental? Rental { get; set; }
+    
     [JsonIgnore]
     [ForeignKey(nameof(CustomerId))]
     public Customer? Customer { get; set; }
+
+    // Relation
+
     [JsonIgnore]
-    [ForeignKey(nameof(StaffId))]
     public Staff? Staff { get; set; }
+    [JsonIgnore]
+    public Rental? Rental { get; set; }
 }

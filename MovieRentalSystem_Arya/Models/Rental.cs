@@ -24,9 +24,6 @@ public class Rental
 
     // Cardinality
     [JsonIgnore]
-    [ForeignKey(nameof(StaffId))]
-    public Staff? Staff { get; set; }
-    [JsonIgnore]
     [ForeignKey(nameof(CustomerId))]
     public Customer? Customer { get; set; }
     [JsonIgnore]
@@ -36,4 +33,6 @@ public class Rental
     // Relation
     [JsonIgnore]
     public ICollection<Payment>? Payments { get; set; }
+    [JsonIgnore]
+    public Staff? Staff { get; set; }
 }

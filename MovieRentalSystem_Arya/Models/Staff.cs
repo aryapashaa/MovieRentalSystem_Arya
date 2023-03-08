@@ -35,13 +35,15 @@ public class Staff
     [JsonIgnore]
     [ForeignKey(nameof(AddressId))]
     public Address? Address { get; set; }
-    [JsonIgnore]
-    [ForeignKey(nameof(StoreId))]
-    public Store? Store { get; set; }
+    
 
     // Relation
     [JsonIgnore]
     public ICollection<Payment>? Payments { get; set; }
     [JsonIgnore]
+    public ICollection<Rental>? Rentals { get; set; }
+    [JsonIgnore]
     public Account? Account { get; set; }
+    [JsonIgnore]
+    public Store? Store { get; set; }
 }
